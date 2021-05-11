@@ -17,7 +17,8 @@ Do the following:
 
    HINT: no function required
 */
-
+var votingAge = 18
+console.log(votingAge)
 
 
 /*
@@ -30,8 +31,17 @@ Do the following:
 
    HINT: no function required
 */
+var x = 10;
+var y = 20;
+ if(x < y){
+   console.log(x - y);
+ if(y < x){
+   console.log(x + y);
+ }
+ }
 
 
+console.log()
 
 
 
@@ -58,10 +68,13 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
 
+  function multiply(e,f){
+    let answer = e * f;
+      console.log(answer);
+  }
+    
+  multiply(2, 3);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,9 +87,12 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
-}
+  function dogYears(dog = 7,human = 1){
+    let answer = dog * human;
+   console.log(answer);
+  }
+
+  dogYears(14, 2)
 
 
 
@@ -201,10 +217,27 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
-  }
-  
+function grade(score) {
+    if (score >= 90) {
+        return 'A';
+    }
+    if (score >= 80) {
+        return 'B';
+    }
+    if (score >= 70) {
+        return 'C';
+    }
+    if (score >= 60) {
+        return 'D';
+    }
+    return 'F';
+}
+
+console.log(grade(92));
+console.log(grade(84)); 
+console.log(grade(70)); 
+console.log(grade(60)); 
+console.log(grade(54)); 
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
