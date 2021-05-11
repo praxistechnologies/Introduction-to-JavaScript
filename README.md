@@ -24,7 +24,7 @@ Exercises are outlined in the `index.js` file, please read the instructions care
 
 ## Instructions
 
-### Task 1: Set up Project
+### Task 1: Set up Project - DONE
 
 Using VSCode and Command Line:
 
