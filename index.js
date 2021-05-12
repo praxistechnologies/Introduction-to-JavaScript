@@ -197,9 +197,30 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
+//function annoyingSong(/*add your code here*/){
         /*add your code here*/
-  }
+//
+
+  funtion annoyingSong() {
+    var items = "bottles";
+    var countdown = 100;
+    while (countdown > 0) {
+        console.log(countdown + " " + items + " of soda on the wall,");
+        console.log(countdown + " " + items + " of soda,");
+        console.log("Take one down, pass it around");
+        count = countdown - 1;
+        if (count > 1) {
+            console.log(countdown + " " + count + " of soda on the wall.");
+        } else if(count == 1) {
+            console.log(countdown + " bottle of soda on the wall"); 
+        } else {
+            console.log("No more " + items + " of soda on the wall.");
+        }
+    }
+    }
+    
+    console.log annoyingSong()
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
