@@ -55,8 +55,9 @@ Do the following:
 
    HINT: look up the Number method
 */
+var string = "1999";
 
-
+consile.log()
 
 
 /*
@@ -167,10 +168,12 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(mi, km){
+  var km = 0.62137;
+  return answer = mi * km;
   }
 
+console.log(miles)
 
 
 //Task 5b - Feet to CM
