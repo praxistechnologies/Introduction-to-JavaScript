@@ -167,9 +167,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(mi, km){
-  var km = 0.62137;
-  return answer = mi * km;
+function miles(kilometers){
+  var kilometers = miles * 0.621371;
+  return miles;
   }
 
 console.log(miles)
@@ -187,7 +187,12 @@ function feet(/*add your code here*/){
     /*add your code here*/
   }
  
-
+  function feet(cm){
+    var cm = feet * 30.48;
+    return feet;
+    }
+  
+  console.log(feet)
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
