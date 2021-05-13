@@ -40,7 +40,6 @@ var y = 20;
  }
  }
 
-
 console.log()
 
 
@@ -55,9 +54,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-var string = "1999";
-
-consile.log()
+let x = '1999'
+let num = Number(x)
+console.log(num)
 
 
 /*
