@@ -123,10 +123,34 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(age, weight){
+  if (age > 1) { 
+    if (weight < 5) {
+      return weight * 0.05;
+    }
+    else if (weight < 10) {
+      return weight * 0.04;
+    }
+    else if (weight < 15) {
+      return weight * 0.03;
+    }
+    else { 
+      return weight * 0.02;
+    }
   }
-
+  else {
+    if (age < 0.25) {  // less then 4 months
+      return weight * 0.10;
+    }
+    else if (age < 7/12) {
+      return weight * 0.05;
+    }
+    else {
+      return weight * 0.04;
+    }
+  }
+}
+console.log(hungryDog(5,20))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -145,15 +169,26 @@ Use the game function below to do the following:
    - lose should return "you lose!"
    - tie should return "it's a tie"
   
-  RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
+  RULES OF THE GAME: Scissors beats Paper 0 | Paper beats Rock 1 | Rock beats Scissors 2 | Or there's a tie 
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
 function game(user, computer){
-    /*add your code here*/
+  if (user == computer) {
+  return "it's a tie";
+  }
+  else if (user == 0 && computer == 2 || user == 1 && computer == 0 || user == 2 && computer == 1) {
+  return "you win!";
+  }
+  else { 
+  return "you lose!"; 
+  }
 }
-  
+console.log(game(0,Math.floor(3 * Math.random())))
+console.log(game(0,0));
+console.log(game(1,0));
+console.log(game(2,0));
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -163,16 +198,16 @@ function game(user, computer){
 /*
 Using the miles function below do the following:
   1. Receive a number of kilometers
-  2. Convert the number of kiolmeters received to miles
+  2. Convert the number of kilometers received to miles
   3. Return the number of miles
 */
 
-function miles(kilometers){
-  var kilometers = miles * 0.621371;
-  return miles;
+function miles(km){
+  let mi = km * 0.621371;
+  return mi;
   }
 
-console.log(miles)
+console.log(miles(2))
 
 
 //Task 5b - Feet to CM
@@ -188,11 +223,11 @@ function feet(/*add your code here*/){
   }
  
   function feet(cm){
-    var cm = feet * 30.48;
+    let feet = cm * 0.0328084;
     return feet;
     }
   
-  console.log(feet)
+    console.log(feet(2))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -208,25 +243,25 @@ Using the annoyingSong function below do the following:
         /*add your code here*/
 //
 
-  funtion annoyingSong() {
-    var items = "bottles";
-    var countdown = 100;
-    while (countdown > 0) {
-        console.log(countdown + " " + items + " of soda on the wall,");
-        console.log(countdown + " " + items + " of soda,");
-        console.log("Take one down, pass it around");
-        count = countdown - 1;
-        if (count > 1) {
-            console.log(countdown + " " + count + " of soda on the wall.");
-        } else if(count == 1) {
-            console.log(countdown + " bottle of soda on the wall"); 
-        } else {
-            console.log("No more " + items + " of soda on the wall.");
-        }
-    }
-    }
-    
-    console.log annoyingSong()
+function annoyingSong() {
+  let items = "bottles";
+  let countdown = 99;
+  while (countdown > 0) {
+      console.log(countdown + " " + items + " of soda on the wall,");
+      console.log(countdown + " " + items + " of soda,");
+      console.log("Take one down, pass it around");
+      countdown = countdown - 1;
+      if (countdown > 1) {
+          console.log(countdown + " " + items + " of soda on the wall.");
+      } else if(countdown == 1) {
+          console.log(countdown + " bottle of soda on the wall"); 
+      } else {
+          console.log("No more " + items + " of soda on the wall.");
+      }
+  }
+  }
+  
+console.log(annoyingSong())
 
 
 
@@ -249,16 +284,16 @@ function grade(score) {
     if (score >= 90) {
         return 'A';
     }
-    if (score >= 80) {
+    else if (score >= 80) {
         return 'B';
     }
-    if (score >= 70) {
+    else if (score >= 70) {
         return 'C';
     }
-    if (score >= 60) {
+    else if (score >= 60) {
         return 'D';
     }
-    return 'F';
+    else return 'F';
 }
 
 console.log(grade(92));
