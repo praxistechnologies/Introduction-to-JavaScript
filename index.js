@@ -54,8 +54,8 @@ Do the following:
 
    HINT: look up the Number method
 */
-let x = '1999'
-let num = Number(x)
+let xX = '1999';
+let num = Number(xX);
 console.log(num)
 
 
@@ -70,8 +70,7 @@ Do the following:
 
 
   function multiply(e,f){
-    let answer = e * f;
-      console.log(answer);
+   return e * f;
   }
     
   multiply(2, 3);
@@ -87,12 +86,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-  function dogYears(dog = 7,human = 1){
-    let answer = dog * human;
-   console.log(answer);
-  }
+function dogYears(humanYears = 1){
+  return humanYears * 7;
+}
 
-  dogYears(14, 2)
+console.log(dogYears(5))
 
 
 
@@ -123,35 +121,36 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(age, weight){
-  if (age > 1) { 
-    if (weight < 5) {
-      return weight * 0.05;
+function hungryDog(weight, age){
+  if (age >= 1) { 
+    if (weight <= 5) {
+      return weight * .05;
     }
-    else if (weight < 10) {
-      return weight * 0.04;
+    else if (weight >= 6 && weight <= 10) {
+      return weight * .04;
     }
-    else if (weight < 15) {
-      return weight * 0.03;
+    else if (weight >= 11 && weight <= 15) {
+      return weight * .03;
     }
     else { 
-      return weight * 0.02;
+      return weight * .02;
     }
   }
   else {
-    if (age < 0.25) {  // less then 4 months
-      return weight * 0.10;
+    if (age < 0.25) { 
+      return weight * .10;
     }
     else if (age < 7/12) {
-      return weight * 0.05;
+      return weight * .05;
     }
     else {
-      return weight * 0.04;
+      return weight * .04;
     }
   }
 }
-console.log(hungryDog(5,20))
+console.log(hungryDog(15,1))
 
+ 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -175,10 +174,10 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-  if (user == computer) {
+  if (user === computer) {
   return "it's a tie";
   }
-  else if (user == 0 && computer == 2 || user == 1 && computer == 0 || user == 2 && computer == 1) {
+  else if (user === "paper" && computer === "rock" || user === "rock" && computer === "scissors" || user === "scissors" && computer === "paper") {
   return "you win!";
   }
   else { 
@@ -189,7 +188,7 @@ console.log(game(0,Math.floor(3 * Math.random())))
 console.log(game(0,0));
 console.log(game(1,0));
 console.log(game(2,0));
-  
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -207,7 +206,7 @@ function miles(km){
   return mi;
   }
 
-console.log(miles(2))
+console.log(miles(2)) 
 
 
 //Task 5b - Feet to CM
@@ -220,11 +219,11 @@ Using the feet function below do the following:
 
  
   function feet(cm){
-    let feet = cm * 0.0328084;
+    let feet = cm / 30.48;
     return feet;
     }
-  
-    console.log(feet(2))
+
+  console.log(feet(2))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -235,32 +234,16 @@ Using the annoyingSong function below do the following:
   2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
+// for loop and return string receive a # 
+// You don't need conditionals here - just a for loop you will pass in the number of times it needs to loop into the function. 
+// You need to return not console.log the string
+// I would still use something like i for your variable inside the forloop. You are going to let i = 
+// I would also use string template literals instead of concatenating strings to make your life easier
 
-//function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-//
-
-function annoyingSong() {
-  let items = "bottles";
-  let countdown = 99;
-  while (countdown > 0) {
-      console.log(countdown + " " + items + " of soda on the wall,");
-      console.log(countdown + " " + items + " of soda,");
-      console.log("Take one down, pass it around");
-      countdown = countdown - 1;
-      if (countdown > 1) {
-          console.log(countdown + " " + items + " of soda on the wall.");
-      } else if(countdown == 1) {
-          console.log(countdown + " bottle of soda on the wall"); 
-      } else {
-          console.log("No more " + items + " of soda on the wall.");
-      }
-  }
-  }
-  
-console.log(annoyingSong())
-
-
+function annoyingSong(numberOfBottles) {
+  for (let i = 0; i < numberOfBottles; i++) { numberOfBottles - 1 }
+  return `${numberOfBottles} bottles of soda on the wall, ${numberOfBottles} bottles of soda, take one down pass it around ${numberOfBottles - 1} bottles of soda on the wall`
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -279,18 +262,20 @@ Using the grade function below do the following:
   
 function grade(score) {
     if (score >= 90) {
-        return 'A';
+        return 'you got an A';
     }
     else if (score >= 80) {
-        return 'B';
+        return 'you got a B';
     }
     else if (score >= 70) {
-        return 'C';
+        return 'you got a C';
     }
     else if (score >= 60) {
-        return 'D';
+        return 'you got a D';
     }
-    else return 'F';
+    else { 
+      return 'you got an F';
+    }
 }
 
 console.log(grade(92));
@@ -298,7 +283,6 @@ console.log(grade(84));
 console.log(grade(70)); 
 console.log(grade(60)); 
 console.log(grade(54)); 
-  
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
@@ -314,10 +298,8 @@ Using the vowelCounter function below do the following:
 
 
 function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+  /*add your code here*/
 }
-
-
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo(){
