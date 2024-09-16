@@ -17,7 +17,8 @@ Do the following:
 
    HINT: no function required
 */
-
+var votingAge = 18
+console.log(votingAge)
 
 
 /*
@@ -30,8 +31,16 @@ Do the following:
 
    HINT: no function required
 */
+var x = 10;
+var y = 20;
+ if(x < y){
+   console.log(x - y);
+ if(y < x){
+   console.log(x + y);
+ }
+ }
 
-
+console.log()
 
 
 
@@ -45,8 +54,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
-
+let xX = '1999';
+let num = Number(xX);
+console.log(num)
 
 
 /*
@@ -58,10 +68,12 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
 
+  function multiply(e,f){
+   return e * f;
+  }
+    
+  multiply(2, 3);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,9 +86,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(humanYears = 1){
+  return humanYears * 7;
 }
+
+console.log(dogYears(5))
 
 
 
@@ -107,11 +121,36 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+  if (age >= 1) { 
+    if (weight <= 5) {
+      return weight * .05;
+    }
+    else if (weight >= 6 && weight <= 10) {
+      return weight * .04;
+    }
+    else if (weight >= 11 && weight <= 15) {
+      return weight * .03;
+    }
+    else { 
+      return weight * .02;
+    }
   }
+  else {
+    if (age < 0.25) { 
+      return weight * .10;
+    }
+    else if (age < 7/12) {
+      return weight * .05;
+    }
+    else {
+      return weight * .04;
+    }
+  }
+}
+console.log(hungryDog(15,1))
 
-
+ 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -129,16 +168,27 @@ Use the game function below to do the following:
    - lose should return "you lose!"
    - tie should return "it's a tie"
   
-  RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
+  RULES OF THE GAME: Scissors beats Paper 0 | Paper beats Rock 1 | Rock beats Scissors 2 | Or there's a tie 
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
 function game(user, computer){
-    /*add your code here*/
+  if (user === computer) {
+  return "it's a tie";
+  }
+  else if (user === "paper" && computer === "rock" || user === "rock" && computer === "scissors" || user === "scissors" && computer === "paper") {
+  return "you win!";
+  }
+  else { 
+  return "you lose!"; 
+  }
 }
-  
-  
+console.log(game(0,Math.floor(3 * Math.random())))
+console.log(game(0,0));
+console.log(game(1,0));
+console.log(game(2,0));
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -147,14 +197,16 @@ function game(user, computer){
 /*
 Using the miles function below do the following:
   1. Receive a number of kilometers
-  2. Convert the number of kiolmeters received to miles
+  2. Convert the number of kilometers received to miles
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(km){
+  let mi = km * 0.621371;
+  return mi;
   }
 
+console.log(miles(2)) 
 
 
 //Task 5b - Feet to CM
@@ -165,11 +217,13 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
  
+  function feet(cm){
+    let feet = cm / 30.48;
+    return feet;
+    }
 
+  console.log(feet(2))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -180,11 +234,16 @@ Using the annoyingSong function below do the following:
   2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
+// for loop and return string receive a # 
+// You don't need conditionals here - just a for loop you will pass in the number of times it needs to loop into the function. 
+// You need to return not console.log the string
+// I would still use something like i for your variable inside the forloop. You are going to let i = 
+// I would also use string template literals instead of concatenating strings to make your life easier
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
-
+function annoyingSong(numberOfBottles) {
+  for (let i = 0; i < numberOfBottles; i++) { numberOfBottles - 1 }
+  return `${numberOfBottles} bottles of soda on the wall, ${numberOfBottles} bottles of soda, take one down pass it around ${numberOfBottles - 1} bottles of soda on the wall`
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -201,11 +260,29 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
-  }
-  
-  
+function grade(score) {
+    if (score >= 90) {
+        return 'you got an A';
+    }
+    else if (score >= 80) {
+        return 'you got a B';
+    }
+    else if (score >= 70) {
+        return 'you got a C';
+    }
+    else if (score >= 60) {
+        return 'you got a D';
+    }
+    else { 
+      return 'you got an F';
+    }
+}
+
+console.log(grade(92));
+console.log(grade(84)); 
+console.log(grade(70)); 
+console.log(grade(60)); 
+console.log(grade(54)); 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
@@ -221,10 +298,8 @@ Using the vowelCounter function below do the following:
 
 
 function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+  /*add your code here*/
 }
-
-
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo(){

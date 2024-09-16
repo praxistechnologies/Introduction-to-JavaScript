@@ -24,7 +24,7 @@ Exercises are outlined in the `index.js` file, please read the instructions care
 
 ## Instructions
 
-### Task 1: Set up Project
+### Task 1: Set up Project - DONE
 
 Using VSCode and Command Line:
 
@@ -36,7 +36,7 @@ Using VSCode and Command Line:
 5. next type `npm run test:watch` in your terminal
 6. Complete your work making regular commits, once you have all your tests passing and you are ready to submit your work please see canvas for instructions on how to submit
 
-### Task 2: MVP
+### Task 2: MVP - Starting
 
 Find the `index.js` file and complete the tasks as written. 
 
